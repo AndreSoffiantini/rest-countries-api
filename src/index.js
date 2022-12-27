@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Home from "./Routes/Home/Home";
 import Layout from "./Routes/Layout/Layout";
+import CountryDetails from "./Routes/CountryDetails/CountryDetails";
 
 /* const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,14 +40,20 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: () => {
           const response = axios.get("https://restcountries.com/v3.1/all");
-          console.log(response);
+          //console.log(response);
           return defer({ response });
         },
-        /* async ({ params, request }) => {
-          const data = await fetch("https://restcountries.com/v3.1/all");
-          console.log(data);
-          const json = await data.json();
-          return defer({ json }); */
+      },
+      {
+        path: "/countries/:name",
+        element: <CountryDetails />,
+        loader: ({ params: { name } }) => {
+          const response = axios.get(
+            `https://restcountries.com/v3.1/name/${name}`
+          );
+          //console.log(response);
+          return defer({ response });
+        },
       },
     ],
   },

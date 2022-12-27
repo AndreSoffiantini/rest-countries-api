@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import "./CountryCard.css";
 
 const CountryCard = ({ country }) => {
   return (
-    <div className="country_card">
+    <Link to={"/countries/" + country.name.common} className="country_card">
       <img
         src={country.flags.png}
         alt={country.name.common + " flag"}
@@ -16,7 +17,7 @@ const CountryCard = ({ country }) => {
         <p>Region: {country.region} </p>
         <p>Capital: {country.capital} </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
