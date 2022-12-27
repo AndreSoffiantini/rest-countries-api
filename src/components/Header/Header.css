@@ -1,0 +1,12 @@
+header {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+}
+
+.dark_mode_btn {
+  background-color: inherit;
+  border: none;
+}
