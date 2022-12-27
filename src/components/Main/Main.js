@@ -1,7 +1,7 @@
 import "./Main.css";
 import classnames from "classnames";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GlobalContext from "../../context/GlobalContext";
 import { useAsyncValue } from "react-router-dom";
 
@@ -12,14 +12,19 @@ import CountriesSection from "./CountriesSection/CountriesSection";
 const Main = () => {
   const { isDarkModeOn } = useContext(GlobalContext);
   const { data } = useAsyncValue();
+  const [searchInput, setSearchInput] = useState("");
+
+  let showedCards = data.filter((country) =>
+    country.name.common.toLowerCase().includes(searchInput)
+  );
 
   return (
     <main className={classnames({ dark_mode_bg: isDarkModeOn })}>
       <div>
-        <SearchBar />
+        <SearchBar setSearchInput={setSearchInput} />
         <FilterMenu />
       </div>
-      <CountriesSection data={data} />
+      <CountriesSection data={showedCards} />
     </main>
   );
 };
