@@ -1,7 +1,7 @@
-import "../../App.css";
+import "../App.css";
 
-import GlobalProvider from "../../context/GlobalProvider";
-import Header from "../../components/Header/Header";
+import GlobalProvider from "../context/GlobalProvider";
+import Header from "../components/Header/Header";
 
 import { Outlet } from "react-router-dom";
 

@@ -1,6 +1,9 @@
 import "./Header.css";
 import classnames from "classnames";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-regular-svg-icons";
+
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalContext";
 import GlobalSetterContext from "../../context/GlobalSetterContext";
@@ -11,15 +14,16 @@ const Header = () => {
 
   return (
     <header className={classnames({ dark_mode_element_bg: isDarkModeOn })}>
-      <h2 className={classnames({ dark_mode_text: isDarkModeOn })}>
+      <span className={classnames({ dark_mode_text: isDarkModeOn })}>
         Where in the world?
-      </h2>
+      </span>
       <button
         className={classnames("dark_mode_btn", {
           dark_mode_text: isDarkModeOn,
         })}
         onClick={() => setIsDarkModeOn(!isDarkModeOn)}
       >
+        <FontAwesomeIcon icon={faMoon} />
         Dark Mode
       </button>
     </header>

@@ -1,26 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  defer,
-} from "react-router-dom";
-import Home from "./Routes/Home/Home";
-import Layout from "./Routes/Layout/Layout";
-import CountryDetails from "./Routes/CountryDetails/CountryDetails";
-
-/* const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path="countries" element={<Home />} />
-      <Route path="countries/:name" element={<Home />} />
-    </Route>
-  )
-); */
+import { RouterProvider, createBrowserRouter, defer } from "react-router-dom";
+import Home from "./Routes/Home";
+import Layout from "./Routes/Layout";
+import CountryDetails from "./Routes/CountryDetails";
 
 const router = createBrowserRouter([
   {

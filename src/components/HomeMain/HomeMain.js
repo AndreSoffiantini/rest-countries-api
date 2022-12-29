@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./HomeMain.css";
 import classnames from "classnames";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import FilterMenu from "./FilterMenu/FilterMenu";
 import CountriesSection from "./CountriesSection/CountriesSection";
 
-const Main = () => {
+const HomeMain = () => {
   const { isDarkModeOn } = useContext(GlobalContext);
   const { data } = useAsyncValue();
 
@@ -41,6 +41,7 @@ const Main = () => {
     <main className={classnames({ dark_mode_bg: isDarkModeOn })}>
       <div>
         <SearchBar setSearchInput={setSearchInput} />
+        <br />
         <FilterMenu data={data} setSelectedRegion={setSelectedRegion} />
       </div>
       <CountriesSection
@@ -52,4 +53,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default HomeMain;
