@@ -18,7 +18,7 @@
 }
 
 .dark_mode_bg {
-  background-color: var(--dark-mode-background-blue);
+  background-color: var(--dark-mode-background-blue) !important;
 }
 
 .dark_mode_element_bg {

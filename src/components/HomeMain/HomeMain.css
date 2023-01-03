@@ -1,5 +1,11 @@
-main {
-  height: 90vh;
+.home_main {
   padding: 1rem 4%;
   background-color: var(--light-mode-background-gray);
+}
+
+@media screen and (min-width: 800px) {
+  .filter_fields {
+    display: flex;
+    justify-content: space-between;
+  }
 }

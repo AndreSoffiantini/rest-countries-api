@@ -38,8 +38,8 @@ const HomeMain = () => {
   };
 
   return (
-    <main className={classnames({ dark_mode_bg: isDarkModeOn })}>
-      <div>
+    <main className={classnames("home_main", { dark_mode_bg: isDarkModeOn })}>
+      <div className="filter_fields">
         <SearchBar setSearchInput={setSearchInput} />
         <FilterMenu data={data} setSelectedRegion={setSelectedRegion} />
       </div>
