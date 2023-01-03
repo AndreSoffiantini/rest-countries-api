@@ -13,7 +13,7 @@ const Waiting = () => {
         dark_mode_text: isDarkModeOn,
       })}
     >
-      <div class="lds-ring">
+      <div className="lds-ring">
         <div></div>
         <div></div>
         <div></div>
