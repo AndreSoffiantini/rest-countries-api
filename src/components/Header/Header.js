@@ -7,6 +7,7 @@ import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import { useContext } from "react";
 import GlobalContext from "../../context/GlobalContext";
 import GlobalSetterContext from "../../context/GlobalSetterContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { isDarkModeOn } = useContext(GlobalContext);
@@ -14,9 +15,12 @@ const Header = () => {
 
   return (
     <header className={classnames({ dark_mode_element_bg: isDarkModeOn })}>
-      <span className={classnames({ dark_mode_text: isDarkModeOn })}>
+      <Link
+        to="/countries"
+        className={classnames({ dark_mode_text: isDarkModeOn })}
+      >
         Where in the world?
-      </span>
+      </Link>
       <button
         className={classnames("dark_mode_btn", {
           dark_mode_text: isDarkModeOn,
