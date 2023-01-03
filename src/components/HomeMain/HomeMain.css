@@ -1,5 +1,5 @@
 main {
   height: 90vh;
-  padding: 0 4%;
+  padding: 1rem 4%;
   background-color: var(--light-mode-background-gray);
 }

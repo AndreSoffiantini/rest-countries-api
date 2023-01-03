@@ -10,9 +10,9 @@ const CountryCard = ({ country }) => {
         style={{ width: "100%" }}
       />
       <div className="container">
-        <h4>
+        <h3>
           <b>{country.name.common}</b>
-        </h4>
+        </h3>
         <p>Population: {country.population} </p>
         <p>Region: {country.region} </p>
         <p>Capital: {country.capital} </p>

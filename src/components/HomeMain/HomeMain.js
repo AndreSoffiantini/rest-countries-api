@@ -41,7 +41,6 @@ const HomeMain = () => {
     <main className={classnames({ dark_mode_bg: isDarkModeOn })}>
       <div>
         <SearchBar setSearchInput={setSearchInput} />
-        <br />
         <FilterMenu data={data} setSelectedRegion={setSelectedRegion} />
       </div>
       <CountriesSection

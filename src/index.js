@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: () => {
           const response = axios.get("https://restcountries.com/v3.1/all");
-          console.log(response);
+          //console.log(response);
           return defer({ response });
         },
       },

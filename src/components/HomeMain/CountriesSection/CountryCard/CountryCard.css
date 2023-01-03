@@ -4,14 +4,17 @@
   transition: 0.3s;
   width: 100%;
   text-decoration: none;
+  color: black;
 }
-
-/* On mouse-over, add a deeper shadow */
-.country_card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.country_card img {
+  height: 150px;
 }
 
 /* Add some padding inside the card container */
 .container {
   padding: 1rem 1rem 2rem 1rem;
+}
+
+.container h3 {
+  margin-bottom: 1rem;
 }
