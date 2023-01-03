@@ -22,9 +22,9 @@
 }
 
 .dark_mode_element_bg {
-  background-color: var(--dark-mode-elements-blue);
+  background-color: var(--dark-mode-elements-blue) !important;
 }
 
 .dark_mode_text {
-  color: var(--dark-mode-text-white);
+  color: var(--dark-mode-text-white) !important;
 }

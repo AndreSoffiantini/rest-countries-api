@@ -1,6 +1,7 @@
 .country_main {
   padding: 2.5rem 2rem;
   background-color: var(--light-mode-background-gray);
+  min-height: 90vh;
 }
 
 .country_main .back_btn {

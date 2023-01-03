@@ -47,25 +47,14 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
+.dropdown-content p {
   padding: 3px 0;
   text-decoration: none;
   display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content p:hover {
-  background-color: #ddd;
   cursor: pointer;
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: lightgray;
 }

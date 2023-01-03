@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import "./CountryCard.css";
 
+import classnames from "classnames";
+import { useContext } from "react";
+import GlobalContext from "../../../../context/GlobalContext";
+
 const CountryCard = ({ country }) => {
+  const { isDarkModeOn } = useContext(GlobalContext);
+
   return (
-    <Link to={"/countries/" + country.name.common} className="country_card">
+    <Link
+      to={"/countries/" + country.name.common}
+      className={classnames("country_card", { dark_mode_text: isDarkModeOn })}
+    >
       <img
         src={country.flags.png}
         alt={country.name.common + " flag"}

@@ -18,10 +18,18 @@ const CountryMain = ({ countryCodes }) => {
 
   return (
     <main
-      className={classnames("country_main", { dark_mode_bg: isDarkModeOn })}
+      className={classnames("country_main", {
+        dark_mode_bg: isDarkModeOn,
+        dark_mode_text: isDarkModeOn,
+      })}
     >
       <Link to="/countries">
-        <button className="back_btn">
+        <button
+          className={classnames("back_btn", {
+            dark_mode_element_bg: isDarkModeOn,
+            dark_mode_text: isDarkModeOn,
+          })}
+        >
           <FontAwesomeIcon
             icon={faArrowLeft}
             style={{ marginRight: "0.5rem" }}
@@ -135,9 +143,16 @@ const CountryMain = ({ countryCodes }) => {
                       return (
                         <li
                           key={countryCode.name}
-                          className="border_country_tag"
+                          className={classnames("border_country_tag", {
+                            dark_mode_element_bg: isDarkModeOn,
+                          })}
                         >
-                          <Link to={"/countries/" + countryCode.name}>
+                          <Link
+                            to={"/countries/" + countryCode.name}
+                            className={classnames({
+                              dark_mode_text: isDarkModeOn,
+                            })}
+                          >
                             {countryCode.name}
                           </Link>
                         </li>

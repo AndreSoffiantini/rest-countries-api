@@ -1,6 +1,7 @@
 .home_main {
   padding: 1rem 4%;
   background-color: var(--light-mode-background-gray);
+  min-height: 90vh;
 }
 
 @media screen and (min-width: 800px) {
