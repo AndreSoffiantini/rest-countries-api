@@ -1,8 +1,25 @@
+import { useContext } from "react";
+import classnames from "classnames";
+import GlobalContext from "../../../context/GlobalContext";
+
+import "./Waiting.css";
+
 const Waiting = () => {
+  const { isDarkModeOn } = useContext(GlobalContext);
   return (
-    <>
-      <h2>Waiting...</h2>
-    </>
+    <div
+      className={classnames("waiting_main", {
+        dark_mode_bg: isDarkModeOn,
+        dark_mode_text: isDarkModeOn,
+      })}
+    >
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   );
 };
 

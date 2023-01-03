@@ -11,7 +11,10 @@ const CountryCard = ({ country }) => {
   return (
     <Link
       to={"/countries/" + country.name.common}
-      className={classnames("country_card", { dark_mode_text: isDarkModeOn })}
+      className={classnames("country_card", {
+        dark_mode_element_bg: isDarkModeOn,
+        dark_mode_text: isDarkModeOn,
+      })}
     >
       <img
         src={country.flags.png}
