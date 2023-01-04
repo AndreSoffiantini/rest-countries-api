@@ -19,10 +19,16 @@ const HomeMain = () => {
 
   const [filteredData, setFilteredData] = useState([]);
 
+  const searchFilter = (data) => {
+    return data.filter((country) =>
+      country.name.common.toLowerCase().includes(searchInput)
+    );
+  };
+
   useEffect(() => {
     if (selectedRegion) {
-      const regionFilterData = (filteredData) => {
-        setFilteredData(filteredData);
+      const regionFilterData = (newFilteredData) => {
+        setFilteredData(newFilteredData);
       };
 
       axios
@@ -30,12 +36,6 @@ const HomeMain = () => {
         .then((res) => regionFilterData(res.data));
     }
   }, [selectedRegion]);
-
-  const searchFilter = (data) => {
-    return data.filter((country) =>
-      country.name.common.toLowerCase().includes(searchInput)
-    );
-  };
 
   return (
     <main className={classnames("home_main", { dark_mode_bg: isDarkModeOn })}>
