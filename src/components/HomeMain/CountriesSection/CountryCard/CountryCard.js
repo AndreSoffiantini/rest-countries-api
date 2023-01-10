@@ -27,13 +27,13 @@ const CountryCard = ({ country }) => {
         </h3>
         <p>
           <b>Population:</b>{" "}
-          {new Intl.NumberFormat().format(country.population)}{" "}
+          {new Intl.NumberFormat().format(country.population) || "N.A."}{" "}
         </p>
         <p>
-          <b>Region:</b> {country.region}{" "}
+          <b>Region:</b> {country.region || "N.A."}{" "}
         </p>
         <p>
-          <b>Capital:</b> {country.capital}{" "}
+          <b>Capital:</b> {country.capital || "N.A."}{" "}
         </p>
       </div>
     </Link>

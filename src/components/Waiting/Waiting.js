@@ -1,11 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import classnames from "classnames";
-import GlobalContext from "../../../context/GlobalContext";
+import GlobalContext from "../../context/GlobalContext";
 
 import "./Waiting.css";
+//import { useEffect } from "react";
 
 const Waiting = () => {
   const { isDarkModeOn } = useContext(GlobalContext);
+  //const [isLoaderVisible, setIsLoaderVisible] = useState(false);
+
+  /* useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaderVisible(true);
+    }, 10);
+
+    return clearTimeout(timeout);
+  }, []); */
+
   return (
     <div
       className={classnames("waiting_main", {

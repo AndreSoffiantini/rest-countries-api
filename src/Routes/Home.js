@@ -4,7 +4,8 @@ import HomeMain from "../components/HomeMain/HomeMain";
 
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import Waiting from "../components/HomeMain/Waiting/Waiting";
+import Waiting from "../components/Waiting/Waiting";
+import Error from "../components/Error/Error";
 
 const Home = () => {
   const { response } = useLoaderData();
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Suspense fallback={<Waiting />}>
-        <Await resolve={response} errorElement={<div>Error!</div>}>
+        <Await resolve={response} errorElement={<Error />}>
           <HomeMain />
         </Await>
       </Suspense>

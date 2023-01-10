@@ -2,7 +2,8 @@ import axios from "axios";
 
 import { Suspense, useEffect, useState } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import Waiting from "../components/HomeMain/Waiting/Waiting";
+import Waiting from "../components/Waiting/Waiting";
+import Error from "../components/Error/Error";
 import CountryMain from "../components/CountryMain/CountryMain";
 
 const CountryDetails = () => {
@@ -31,7 +32,7 @@ const CountryDetails = () => {
   return (
     <>
       <Suspense fallback={<Waiting />}>
-        <Await resolve={response} errorElement={<div>Error!</div>}>
+        <Await resolve={response} errorElement={<Error />}>
           <CountryMain countryCodes={countryCodes} />
         </Await>
       </Suspense>

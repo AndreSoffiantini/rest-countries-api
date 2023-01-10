@@ -16,6 +16,8 @@ const CountryMain = ({ countryCodes }) => {
 
   const { isDarkModeOn } = useContext(GlobalContext);
 
+  const NAobject = { value: "N.A." };
+
   return (
     <main
       className={classnames("country_main", {
@@ -54,17 +56,21 @@ const CountryMain = ({ countryCodes }) => {
             <ul>
               <li>
                 <b>Native Names:</b>{" "}
-                {Object.values(data[0].name.nativeName).map((name) => (
-                  <span key={name.common}>
-                    {name.common}
-                    {Object.values(data[0].name.nativeName).lastIndexOf(
-                      name
-                    ) ===
-                    Object.values(data[0].name.nativeName).length - 1
-                      ? ""
-                      : ", "}
-                  </span>
-                ))}
+                {Object.values(data[0].name.nativeName || NAobject).map(
+                  (name) => (
+                    <span key={name.common}>
+                      {name.common || "N.A."}
+                      {Object.values(
+                        data[0].name.nativeName || NAobject
+                      ).lastIndexOf(name) ===
+                      Object.values(data[0].name.nativeName || NAobject)
+                        .length -
+                        1
+                        ? ""
+                        : ", "}
+                    </span>
+                  )
+                )}
               </li>
               <li>
                 <b>Population:</b>{" "}
@@ -74,40 +80,44 @@ const CountryMain = ({ countryCodes }) => {
                 <b>Region:</b> {data[0].region}
               </li>
               <li>
-                <b>Sub Region:</b> {data[0].subregion}
+                <b>Sub Region:</b> {data[0].subregion || "N.A."}
               </li>
               <li>
-                <b>Capital:</b> {data[0].capital}{" "}
+                <b>Capital:</b> {data[0].capital || "N.A."}{" "}
               </li>
             </ul>
 
             <ul>
               <li>
-                <b>Top Level Domain:</b> {data[0].tld}
+                <b>Top Level Domain:</b> {data[0].tld || "N.A."}
               </li>
               <li>
                 <b>Currencies:</b>{" "}
-                {Object.values(data[0].currencies).map((currency) => (
-                  <span key={currency.name}>
-                    {currency.name}
-                    {Object.values(data[0].currencies).lastIndexOf(currency) ===
-                    Object.values(data[0].currencies).length - 1
-                      ? ""
-                      : ", "}
-                  </span>
-                ))}
+                {Object.values(data[0].currencies || NAobject).map(
+                  (currency) => (
+                    <span key={currency.name}>
+                      {currency.name || "N.A."}
+                      {Object.values(
+                        data[0].currencies || NAobject
+                      ).lastIndexOf(currency) ===
+                      Object.values(data[0].currencies || NAobject).length - 1
+                        ? ""
+                        : ", "}
+                    </span>
+                  )
+                )}
               </li>
               <li>
                 <b>Languages:</b>{" "}
-                {Object.values(data[0].languages)
+                {Object.values(data[0].languages || NAobject)
                   .sort()
                   .map((language) => (
                     <span key={language}>
-                      {language}
-                      {Object.values(data[0].languages)
+                      {language || "N.A."}
+                      {Object.values(data[0].languages || NAobject)
                         .sort()
                         .lastIndexOf(language) ===
-                      Object.values(data[0].languages).length - 1
+                      Object.values(data[0].languages || NAobject).length - 1
                         ? ""
                         : ", "}
                     </span>
