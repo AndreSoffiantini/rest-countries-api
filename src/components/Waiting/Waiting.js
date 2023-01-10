@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import classnames from "classnames";
 import GlobalContext from "../../context/GlobalContext";
 
